@@ -10,7 +10,10 @@ export const useTabs = tabs => {
 
 	const { pathname } = useLocation();
 
-	useEffect(() => history.push(url + '/' + linkName.toLowerCase()), [pathname]);
+	useEffect(() => {
+		const newPathname = url + '/' + linkName.toLowerCase();
+		history.push(newPathname);
+	}, [pathname]);
 
 	return {
 		url,
