@@ -12,7 +12,7 @@ const NavTabs = styled.nav`
 `;
 
 const TabbedNavigation = ({ tabs }) => {
-	const { url, getClassName, setActiveLink } = useTabs(tabs);
+	const { url, getClassName, setActiveTab } = useTabs(tabs);
 
 	return (
 		<Container>
@@ -22,7 +22,7 @@ const TabbedNavigation = ({ tabs }) => {
 						key={id}
 						to={url + link}
 						className={getClassName(name)}
-						onClick={() => setActiveLink(name)}
+						onClick={() => setActiveTab(name)}
 					>
 						{name}
 					</TabLink>
