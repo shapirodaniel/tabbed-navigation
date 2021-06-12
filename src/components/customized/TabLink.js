@@ -1,9 +1,7 @@
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-const activeClassName = 'selected';
-
-const TabbedNavLink = styled(NavLink).attrs({ activeClassName })`
+const TabLink = styled(Link)`
 	& {
 		display: flex;
 		align-items: center;
@@ -15,11 +13,11 @@ const TabbedNavLink = styled(NavLink).attrs({ activeClassName })`
 		border-bottom: 1px solid black;
 		color: inherit;
 	}
-	&.${activeClassName} {
+	&.active {
 		color: blue;
 		border: 1px solid black;
 		border-bottom: none;
 	}
 `;
 
-export default TabbedNavLink;
+export default TabLink;

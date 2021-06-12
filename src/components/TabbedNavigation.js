@@ -1,7 +1,8 @@
 /* eslint-disable react/display-name */
 import React from 'react';
-import { useRouteMatch, Switch, Route } from 'react-router-dom';
-import TabbedNavLink from './customized/TabbedNavLink';
+import { Switch, Route } from 'react-router-dom';
+import { useTabs } from '../custom-hooks/useTabs';
+import TabLink from './customized/TabLink';
 import styled from 'styled-components';
 
 const Container = styled.div``;
@@ -11,15 +12,20 @@ const NavTabs = styled.nav`
 `;
 
 const TabbedNavigation = ({ tabs }) => {
-	const { url } = useRouteMatch();
+	const { url, getClassName, setActiveLink } = useTabs(tabs);
 
 	return (
 		<Container>
 			<NavTabs>
 				{tabs.map(({ id, link, name }) => (
-					<TabbedNavLink key={id} to={url + link}>
+					<TabLink
+						key={id}
+						to={url + link}
+						className={getClassName(name)}
+						onClick={() => setActiveLink(name)}
+					>
 						{name}
-					</TabbedNavLink>
+					</TabLink>
 				))}
 			</NavTabs>
 			<Switch>
