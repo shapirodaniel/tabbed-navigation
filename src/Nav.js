@@ -45,7 +45,7 @@ const Container = styled.nav`
 
 const Nav = () => (
 	<Container>
-		{nav.map(({ id, name }) => (
+		{nav.map(({ id, name, firstTab }) => (
 			<CustomNavLink key={id} to={`/${name.toLowerCase()}`}>
 				{name}
 			</CustomNavLink>
