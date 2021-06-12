@@ -17,14 +17,16 @@ const activeClassName = 'selected';
 
 const CustomNavLink = styled(NavLink).attrs({ activeClassName })`
 	& {
-		padding: 1em;
 		color: ghostwhite;
+	}
+	&:not(:first-child) {
+		margin-left: 1em;
 	}
 	&.${activeClassName} {
 		color: pink;
 		border-bottom: 1px solid pink;
 		padding-bottom: 2px;
-		transform: translateY(-2px);
+		transform: translateY(2px);
 	}
 `;
 
@@ -35,6 +37,10 @@ const Container = styled.nav`
 	right: 0;
 	color: ghostwhite;
 	background-color: black;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: 1em;
 `;
 
 const Nav = () => (
