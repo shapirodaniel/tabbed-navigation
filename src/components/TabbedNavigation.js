@@ -2,7 +2,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { useTabs } from '../custom-hooks/useTabs';
-import TabLink from './customized/TabLink';
+import TabLink from './presentational/TabLink';
 import styled from 'styled-components';
 
 const Container = styled.div``;
